@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./Components/Navbar";
+import AllToDos from "./Pages/AllToDos";
+import AddNewToDo from "./Pages/AddNewToDo";
+import CompletedToDos from "./Pages/CompletedToDos";
+import ImportantToDos from "./Pages/ImportantToDos";
+import MissedToDos from "./Pages/IncompleteToDos";
+import dummyData from "./Pages/dummyData";
 
-function App() {
+if (localStorage.length===0) {
+  let dummyData1=JSON.stringify(dummyData)
+  localStorage.setItem("data",dummyData1)
+}
+
+let App=()=> {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar/>
+      <Routes>
+        <Route path="" Component={AllToDos}/>
+        <Route path="addnew" Component={AddNewToDo}/>
+        <Route path="completedtodos" Component={CompletedToDos}/>
+        <Route path="missedtodos" Component={MissedToDos}/>
+        <Route path="importanttodos" Component={ImportantToDos}/>
+      </Routes>
     </div>
   );
 }
