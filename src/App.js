@@ -6,6 +6,7 @@ import CompletedToDos from "./Pages/CompletedToDos";
 import ImportantToDos from "./Pages/ImportantToDos";
 import MissedToDos from "./Pages/IncompleteToDos";
 import dummyData from "./Pages/dummyData";
+import { GlobalProvider } from "./Store/Context";
 
 if (localStorage.length===0) {
   let dummyData1=JSON.stringify(dummyData)
@@ -13,6 +14,9 @@ if (localStorage.length===0) {
 }
 
 let App=()=> {
+
+  let data=GlobalProvider()
+  setInterval(data.refresh,1000)
   return (
     <div className="App">
       <Navbar/>

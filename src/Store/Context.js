@@ -10,6 +10,8 @@ let AppProvider=({children})=>{
 
     let [state,setState]=useState(true)
 
+    let refresh=()=>{setState(!state)}
+
     let addNewToDo=(newtodo)=>{
         data=[...array.todos]
         data.push(newtodo)
@@ -79,7 +81,7 @@ let AppProvider=({children})=>{
         return {currentHour:hour,currentMinutes:minutes,currentDay:day,currentMonth:month,currentYear:year}
     }
 
-    return <AppContext.Provider value={{...array,addNewToDo,completeTask,deleteTask,makeTaskNotImportant,makeTaskImportant,currentTime,setNewDeadline}}>
+    return <AppContext.Provider value={{...array,addNewToDo,completeTask,deleteTask,makeTaskNotImportant,makeTaskImportant,currentTime,setNewDeadline,refresh}}>
         {children}
     </AppContext.Provider>
 }

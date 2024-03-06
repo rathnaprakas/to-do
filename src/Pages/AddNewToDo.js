@@ -22,7 +22,6 @@ let AddNewToDo=()=>{
         let enteredDescription=inputDescriptionRef.current.value
         let newIndex=(data.todos.length?data.todos[data.todos.length-1].id+1:0)
 
-        console.log(enteredDeadline)
         let todo={id:newIndex,title:enteredTitle,
             deadline:{day:Number(enteredDeadline.slice(8,10)),month:Number(enteredDeadline.slice(5,7)),year:Number(enteredDeadline.slice(0,4)),hour:Number(enteredDeadline.slice(11,13)),minutes:Number(enteredDeadline.slice(14,16))},
             isImportant:enteredIsImportant,description:enteredDescription,completed:false}
