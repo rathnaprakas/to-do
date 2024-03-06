@@ -18,7 +18,7 @@ let ImportantToDoCard=({id,title,deadline,isImportant,description})=>{
 
     return <div>
         <h4>{title}</h4>
-        <p>{`${deadline.hour} hrs on ${deadline.day}-${deadline.month}-${deadline.year}`}</p>
+        <p>{`${deadline.hour} hrs ${deadline.minutes} mins on ${deadline.day}-${deadline.month}-${deadline.year}`}</p>
         <p>{description}</p>
         <button onClick={notImportantHandler}>Not Important</button>
         <button onClick={completeButtonHandler}>Task Completed</button>

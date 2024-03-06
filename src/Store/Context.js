@@ -74,8 +74,9 @@ let AppProvider=({children})=>{
         let day=time.getDate()
         let month=time.getMonth()+1
         let year=time.getFullYear()
+        let minutes=time.getMinutes()
 
-        return {currentHour:hour,currentDay:day,currentMonth:month,currentYear:year}
+        return {currentHour:hour,currentMinutes:minutes,currentDay:day,currentMonth:month,currentYear:year}
     }
 
     return <AppContext.Provider value={{...array,addNewToDo,completeTask,deleteTask,makeTaskNotImportant,makeTaskImportant,currentTime,setNewDeadline}}>

@@ -15,7 +15,7 @@ let MissedToDoCard=({id,title,deadline,isImportant,description})=>{
     let submitNewDeadlineHandler=(e)=>{
         e.preventDefault()
         let enteredDeadline=inputDeadlineRef.current.value
-        let newDeadline={day:Number(enteredDeadline.slice(8,10)),month:Number(enteredDeadline.slice(5,7)),year:Number(enteredDeadline.slice(0,4)),hour:Number(enteredDeadline.slice(11,13))}
+        let newDeadline={day:Number(enteredDeadline.slice(8,10)),month:Number(enteredDeadline.slice(5,7)),year:Number(enteredDeadline.slice(0,4)),hour:Number(enteredDeadline.slice(11,13)),minutes:Number(enteredDeadline.slice(14,16))}
         data.setNewDeadline(id,newDeadline)
     }
     return <div>
